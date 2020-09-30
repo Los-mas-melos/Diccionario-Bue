@@ -10,8 +10,15 @@ button {
 
 .formulario-contenedor {
     margin: 0 auto;
-    margin-top: 30%;
     padding: 0;
+}
+
+.formulario-login {
+    margin-top: 30%;
+}
+
+.formulario-registro {
+    margin-top: 20%;
 }
 
 .modal-content {
@@ -44,6 +51,10 @@ button {
 
 .form-group#formulario-usuario::before {
     content: "\f007";
+}
+
+.form-group#formulario-correo::before {
+    content: "\f0e0";
 }
 
 .form-group#formulario-contrasena::before {
