@@ -21,12 +21,12 @@
       <div class="col-sm-8 formulario-contenedor formulario-login">
         <div class="modal-content">
           <h1>Inicio de sesión</h1>
-          <form action="" class="col-12">
+          <form action="Iniciar" class="col-12">
             <div class="form-group" id="formulario-usuario">
-              <input type="text" placeholder="Nombre de usuario" class="form-control">
+              <input type="text" placeholder="Nombre de usuario" class="form-control" name="Usuario">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Contraseña" class="form-control">
+              <input type="password" placeholder="Contraseña" class="form-control" name="Pass">
             </div>
             <button type="submit" class="btn btn-primary"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
