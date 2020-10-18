@@ -15,7 +15,7 @@ public class Diccionario extends SimplyLinkedList {
 
     SimplyLinkedList<Entrada> diccionario = new SimplyLinkedList();
 
-    public void Diccionario() {
+    public Diccionario() {
         File file = new File("Diccionario(1k).txt");
         try (
                 FileInputStream fichero = new FileInputStream(file);
