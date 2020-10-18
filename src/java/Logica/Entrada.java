@@ -11,7 +11,7 @@ public class Entrada {
         this.español = español;
         this.bue = bue;
     }
-
+    
     public String getEspañol() {
         return español;
     }
