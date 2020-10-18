@@ -12,7 +12,7 @@ public class SimplyLinkedList<T> {
     
     void insert(T value) {
         if (this.length == 0) {
-            this.first = new Node<T>(value);
+            this.first = new Node(value);
             this.length++;
             return;
         }
@@ -20,7 +20,7 @@ public class SimplyLinkedList<T> {
         while (aux.next != null) {
             aux = aux.next;
         }
-        aux.next = new Node<T>(value);
+        aux.next = new Node(value);
         this.length++;
     }
     

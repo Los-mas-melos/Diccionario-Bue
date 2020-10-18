@@ -14,9 +14,13 @@ import java.util.logging.Logger;
 public class Diccionario extends SimplyLinkedList {
 
     SimplyLinkedList<Entrada> diccionario = new SimplyLinkedList();
+    Integer size = 0;
 
     public Diccionario() {
-        File file = new File("Diccionario(1k).txt");
+        super();
+        SimplyLinkedList<Entrada> diccionario_ = new SimplyLinkedList();
+        int index = 0;
+        File file = new File("Diccionario(1k)ParaPruebas.txt");
         try (
                 FileInputStream fichero = new FileInputStream(file);
                 InputStreamReader wordList = new InputStreamReader(fichero, StandardCharsets.UTF_8);
@@ -26,29 +30,36 @@ public class Diccionario extends SimplyLinkedList {
             while ((linea = in.readLine()) != null) {
 
                 String[] entradas = linea.split("\\t");
-                int index = Integer.parseInt(entradas[0]);
+                index = Integer.parseInt(entradas[0]);
                 String bueEntrada = entradas[1];
                 String espEntrada = entradas[2];
-
                 Entrada palabraDiccionario = new Entrada(espEntrada, bueEntrada);
-                diccionario.insert(palabraDiccionario);
+                diccionario_.insert(palabraDiccionario);
+
             }
         } catch (IOException e) {
             System.out.println("Error al leer archivo de palabras.");
         }
+        this.diccionario = diccionario_;
+        size = index;
+        this.length = size;
+        
+
     }
 
     public Entrada ingresarEntrada(String bue, String español) {
         Entrada nuevaEntrada = new Entrada(español, bue);
-        File file = new File("Diccionario(1k).txt");
+
+        File file = new File("Diccionario(1k)ParaPruebas.txt");
         try (BufferedWriter out = new BufferedWriter(new FileWriter(file, true));) {
-            int newSize = diccionario.length()+1;
+            int newSize = diccionario.length() + 1;
             out.newLine();
-            out.write(newSize);
+            out.write(Integer.toString(newSize));
             out.append("\t");
             out.write(bue);
             out.append("\t");
             out.write(español);
+            diccionario.length++;
         } catch (IOException e) {
             Logger.getLogger(Diccionario.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -56,19 +67,20 @@ public class Diccionario extends SimplyLinkedList {
     }
 
     public String buscarPalabra(String input) {
+        
         String output = "";
-        for (int i = 0; i < diccionario.length(); i++) {
-            if (input.equalsIgnoreCase(diccionario.getK(i).getBue())) {
-                output = "Traducción al español: " + diccionario.getK(i).getEspañol();
-                i = diccionario.length();
-            } else if (input.equalsIgnoreCase(diccionario.getK(i).getEspañol())) {
-                output = "Traducción al bue: " + diccionario.getK(i).getBue();
-                i = diccionario.length();
+            for (int i = 0; i < diccionario.length(); i++) {
+                if (input.equalsIgnoreCase(diccionario.getK(i).getBue())) {
+                    output = "Traducción al español: " + diccionario.getK(i).getEspañol();
+                    i = diccionario.length();
+                } else if (input.equalsIgnoreCase(diccionario.getK(i).getEspañol())) {
+                    output = "Traducción al bue: " + diccionario.getK(i).getBue();
+                    i = diccionario.length();
+                }
             }
-        }
-        if (output.equals("")) {
-            output = "Palabra no encontrada.";
-        }
+            if (output.equals("")) {
+                output = "Palabra no encontrada.";
+            }
         return output;
     }
 
