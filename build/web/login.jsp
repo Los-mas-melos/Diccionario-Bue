@@ -21,7 +21,7 @@
       <div class="col-sm-8 formulario-contenedor formulario-login">
         <div class="modal-content">
           <h1>Inicio de sesión</h1>
-          <form action="Iniciar" class="col-12">
+          <form action="Iniciar" method="post" class="col-12">
             <div class="form-group" id="formulario-usuario">
               <input type="text" placeholder="Nombre de usuario" class="form-control" name="Usuario">
             </div>
