@@ -61,10 +61,11 @@ button {
     content: "\f058";
 }
 
-.olvidar {
-    padding: 10px 0;
+.actions {
+    padding-top: 5px;
+    padding-bottom: 15px;
 }
 
-.olvidar a{
+.actions a{
     color: white;
 }
