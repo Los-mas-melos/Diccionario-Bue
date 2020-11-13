@@ -5,10 +5,16 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class User {
+    
+    final String archivoUsuarios = "src/java/Datos/Usuarios.txt";
+    Path rutaUsuarios = Paths.get(archivoUsuarios);
+    
     public boolean find(String user) {
-        File fichero = new File("C:\\Users\\Julian Manosalva\\Desktop\\Usuarios.txt");
+        File fichero = rutaUsuarios.toFile();
 
         String busqueda;
         String respuesta;
@@ -50,10 +56,10 @@ public class User {
         
         SimplyLinkedList<String> myList = new SimplyLinkedList<>();
 
-        File f = new File( "C:\\Users\\Julian Manosalva\\Desktop\\Usuarios.txt");// Cambiar por una ruta relativa
+        File f = rutaUsuarios.toFile();
         BufferedReader entrada = null;
         try {
-            entrada = new BufferedReader( new FileReader( f ) );
+            entrada = new BufferedReader(new FileReader(f));
             String linea;
             while(entrada.ready()){
                 linea = entrada.readLine();
@@ -66,32 +72,29 @@ public class User {
         {
             try{
                 entrada.close();
-            }catch(IOException e1){}
+            }catch(IOException e){}
         }
         //System.out.println(myList.toString()); Pillar bien
         //search_User busqueda = new search_User();
         //busqueda.buscar();
     }
-    public void create_user(String usuario, String Info_Usuario){
+    public void create_user(String usuario){
         //Un texto cualquiera guardado en una variable
         //usuario = "Hola";
 
         try
         {
             //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-            File archivo=new File("C:\\Users\\Julian Manosalva\\Desktop\\Usuarios.txt");
-            File archivo2=new File("C:\\Users\\Julian Manosalva\\Desktop\\Info_Usuarios.txt");
+            File archivo = rutaUsuarios.toFile();
             //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
             FileWriter escribir = new FileWriter(archivo,true);
-            FileWriter escribir2 = new FileWriter(archivo2,true);
             
             //Escribimos en el archivo con el metodo write
             escribir.write("\n"+usuario);
-            escribir2.write("\n"+Info_Usuario);
 
             //Cerramos la conexion
+            //System.out.println(rutaUsuarios.toAbsolutePath().toString());
             escribir.close();
-            escribir2.close();
         }
             //Si existe un problema al escribir cae aqui
         catch(Exception e)

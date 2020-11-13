@@ -28,10 +28,10 @@
               <input type="email" placeholder="correo" class="form-control" name="Correo_U">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="ContraseÃ±a" class="form-control" name="Clave_U">
+              <input type="password" placeholder="Contraseña" class="form-control" name="Clave_U">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Confirmar contraseÃ±a" class="form-control "name="Confirm_Clave">
+              <input type="password" placeholder="Confirmar contraseña" class="form-control "name="Confirm_Clave">
             </div>
             <button type="submit" class="btn btn-primary"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
