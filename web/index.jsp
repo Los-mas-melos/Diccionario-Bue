@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -12,6 +15,11 @@
     <title>Diccionario Bue</title>
   </head>
   <body>
+    <%
+        FileManagment fileUsers = new FileManagment();
+        SimplyLinkedList<User> listUsers = (SimplyLinkedList<User>)fileUsers.readObject("Usuarios.bin");
+        session.setAttribute("listaUsuarios", listUsers);
+    %>
     <header>
       <nav class="nav nav-pills flex-column flex-sm-row barra-navegacion">
         <a class="flex-sm-fill text-sm-center nav-link active" href="index.html">Inicio</a>

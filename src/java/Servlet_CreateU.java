@@ -1,4 +1,4 @@
-import Logica.User;
+import Logica.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,16 +15,18 @@ public class Servlet_CreateU extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Nombre = request.getParameter("Nombre_U");
-        String Correo = request.getParameter("Correo_U");
-        String Clave = request.getParameter("Clave_U");
-        String Confirmar_clave = request.getParameter("Confirm_Clave");
+        String name = request.getParameter("Nombre_U");
+        String mail = request.getParameter("Correo_U");
+        String password = request.getParameter("Clave_U");
+        String validatePassword = request.getParameter("Confirm_Clave");
+        SimplyLinkedList<User> listUsers = (SimplyLinkedList<User>)request.getSession().getAttribute("listaUsuarios");
         
-        User us = new User();
-        
-        if (Clave.equals(Confirmar_clave)){
-            String reg_user = Nombre+"--"+Correo+"--"+Clave;
-            us.create_user(reg_user);
+        if (password.equals(validatePassword)) {
+            User newUser = new User(name, mail, password);
+            listUsers.insert(newUser);
+            request.getSession().setAttribute("listaUsuarios", listUsers);
+            FileManagment fileUsers = new FileManagment();
+            fileUsers.writeObject(listUsers, "Usuarios.bin");
             response.sendRedirect("login.jsp");
         }
         else{

@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
 
+import Logica.Node;
+import Logica.SimplyLinkedList;
 import Logica.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,22 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Julian Manosalva
- */
 @WebServlet(name = "InicioSesion", urlPatterns = {"/Iniciar"})
 public class InicioSesion extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
@@ -37,14 +21,12 @@ public class InicioSesion extends HttpServlet {
         
         String usuario = request.getParameter("Usuario");
         String clave = request.getParameter("Pass");
+        SimplyLinkedList<User> listUsers = (SimplyLinkedList<User>)request.getSession().getAttribute("listaUsuarios");
         
-        String user = usuario+"--"+clave;
-        
-        User us = new User();
-        if (us.find(user)){
-            response.sendRedirect("index.html");
-        }
-        else{
+        //Falta hacer validacion con los datos de la lista enlazada de usuarios para cualquier usuario
+        if (listUsers.first.value.getName().equals(usuario) && listUsers.first.value.getPassword().equals(clave)){
+            response.sendRedirect("index.jsp");
+        } else{
             response.sendRedirect("form.jsp");
         }
     }

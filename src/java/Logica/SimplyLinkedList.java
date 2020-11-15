@@ -1,16 +1,18 @@
 package Logica;
 
-public class SimplyLinkedList<T> {
+import java.io.Serializable;
 
-    Node<T> first;
-    Integer length;
+public class SimplyLinkedList<T> implements Serializable {
+
+    public Node<T> first;
+    protected Integer length;
 
     public SimplyLinkedList() {
         this.length = 0;
         this.first = null;
     }
     
-    void insert(T value) {
+    public void insert(T value) {
         if (this.length == 0) {
             this.first = new Node(value);
             this.length++;
@@ -41,7 +43,7 @@ public class SimplyLinkedList<T> {
         }
     }
         
-    void delete(T value) {
+    public void delete(T value) {
         if (this.first == null) { //En caso de una lista vacía
             System.out.println("No puedo eliminar en una lista vacia");
 
@@ -71,11 +73,11 @@ public class SimplyLinkedList<T> {
         sb.append("]");
         return sb.toString();
     }
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return this.length == 0;
     }
 
-    Integer length() {
+    public Integer length() {
         return this.length;
     }
     
