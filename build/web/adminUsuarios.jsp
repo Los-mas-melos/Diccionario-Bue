@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -34,39 +37,48 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <%
+                      SimplyLinkedList listUsers = (SimplyLinkedList)session.getAttribute("listaUsuarios");
+                      Node aux = listUsers.first;
+                      boolean emptyList = false;
+                      if(aux != null) {
+                          int count = 1;
+                          while(aux != null) {
+                              
+                  %>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row"><%= count%></th>
+                    <td><%= aux.value.getName()%></td>
+                    <td><%= aux.value.getMail()%></td>
+                    <td><%= aux.value.getPassword()%></td>
                     <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
+                        <a href="editarUsuario.jsp?Id=<%=count%>&Nombre=<%=aux.value.getName()%>&Correo=<%=aux.value.getMail()%>&Contrasena=<%=aux.value.getPassword()%>" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
+                        <a href="eliminarUsuario.jsp?Correo=<%=aux.value.getMail()%>" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
+                  <%
+                                count++;
+                                aux = aux.next;
+                            }
+                        } else {
+                            emptyList = true;
+                        }
+                  %>
                 </tbody>
             </table>
         </div>
+        <%
+            if(emptyList) {
+        %>
+        <div class="row justify-content-center">
+            <div class="alert alert-danger no-users" role="alert">
+                No hay usuarios registrados
+            </div>
+        </div>
+        
+        <%
+            }
+        %>
         <div class="row justify-content-center">
             <a class="btn btn-dark create-user" href="form.jsp" role="button">Crear nuevo usuario</a>
         </div>

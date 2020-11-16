@@ -13,9 +13,6 @@ public class User implements Serializable {
         this.mail = mail;
         this.password = password;
     }
-    
-//    final String archivoUsuarios = "src/java/Datos/Usuarios.txt";
-//    Path rutaUsuarios = Paths.get(archivoUsuarios);
 
     public String getName() {
         return name;

@@ -2,23 +2,23 @@ package Logica;
 
 import java.io.Serializable;
 
-public class SimplyLinkedList<T> implements Serializable {
+public class SimplyLinkedList implements Serializable {
 
-    public Node<T> first;
-    protected Integer length;
+    public Node first;
+    protected int length;
 
     public SimplyLinkedList() {
         this.length = 0;
         this.first = null;
     }
     
-    public void insert(T value) {
+    public void insert(User value) {
         if (this.length == 0) {
             this.first = new Node(value);
             this.length++;
             return;
         }
-        Node<T> aux = this.first;
+        Node aux = this.first;
         while (aux.next != null) {
             aux = aux.next;
         }
@@ -26,7 +26,7 @@ public class SimplyLinkedList<T> implements Serializable {
         this.length++;
     }
     
-        public T getK(Integer index) {
+        public User getK(Integer index) {
         if(index<=0){
             return null;
         }else if (index == 0) {
@@ -35,23 +35,33 @@ public class SimplyLinkedList<T> implements Serializable {
             System.out.println("El índice es mayor al tamaño de la lista");
             return null;
         } else {
-            Node<T> aux = this.first;
+            Node aux = this.first;
             for (int i = 1; i < index; i++) {
                 aux = aux.next;
             }
             return aux.value;
         }
     }
-        
-    public void delete(T value) {
-        if (this.first == null) { //En caso de una lista vacía
-            System.out.println("No puedo eliminar en una lista vacia");
-
+    
+    public void deleteFirst() {
+        if (this.length != 0) {
+            this.first = this.first.next;
+            this.length--;
         } else {
-            Node<T> aux = this.first;
-            while (aux.next.value != value) {
+            System.out.println("La lista está vacía.");
+        }
+    }
+        
+    public void deleteByMail(String mail) {
+        if (this.first == null) {
+            System.out.println("La lista está vacía.");
+        } else if (this.first.value.getMail().equals(mail)) {
+            this.deleteFirst();
+        } else {
+            Node aux = this.first;
+            while (!aux.next.value.getMail().equals(mail)) {
                 if (aux.next == null) {
-                    System.out.println("El elemento no se encuentra en la lista");
+                    System.out.println("El elemento no existe dentro de la lista.");
                     return;
                 }
                 aux = aux.next;
@@ -60,11 +70,30 @@ public class SimplyLinkedList<T> implements Serializable {
             this.length--;
         }
     }
+    
+    public Node getByMail(String mail) {
+       Node aux = this.first;
+       if (this.length == 0) {
+           System.out.println("Lista vacía.");
+           return null;
+       } else if (this.first.value.getMail().equals(mail)) {
+           return this.first;
+       } else {
+           while (aux.next != null) {
+               aux = aux.next;
+               if(aux.value.getMail().equals(mail)){
+                   return aux;
+               }
+           }
+       }
+       return aux;
+   }
+    
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        Node<T> aux = this.first;
+        Node aux = this.first;
         while (aux.next != null){
             sb.append(aux.value).append(", ");
             aux = aux.next;
@@ -77,7 +106,7 @@ public class SimplyLinkedList<T> implements Serializable {
         return this.length == 0;
     }
 
-    public Integer length() {
+    public int length() {
         return this.length;
     }
     

@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -19,7 +22,7 @@
     <div class="container align-items-center">
       <div class="row justify-content-center">
         <div class="badge badge-primary text-wrap users-title" style="width: 20rem;">
-          Palabras
+          Usuarios
         </div>
       </div>
         <div class="row justify-content-center">
@@ -27,52 +30,57 @@
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Español</th>
-                    <th scope="col">Bue</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Ejemplo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Contraseña</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <%
+                      SimplyLinkedList listUsers = (SimplyLinkedList)session.getAttribute("listaUsuarios");
+                      Node aux = listUsers.first;
+                      boolean emptyList = false;
+                      if(aux != null) {
+                          int count = 1;
+                          while(aux != null) {
+                              
+                  %>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
-                    <td>Interjección</td>
-                    <td>Cómo sería</td>
+                    <th scope="row"><%= count%></th>
+                    <td><%= aux.value.getName()%></td>
+                    <td><%= aux.value.getMail()%></td>
+                    <td><%= aux.value.getPassword()%></td>
                     <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
+                        <a href="editarUsuario.jsp?Id=<%=count%>&Nombre=<%=aux.value.getName()%>&Correo=<%=aux.value.getMail()%>&Contrasena=<%=aux.value.getPassword()%>" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
+                        <a href="eliminarUsuario.jsp?Correo=<%=aux.value.getMail()%>" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
-                    <td>Interjección</td>
-                    <td>Cómo sería</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
-                    <td>Interjección</td>
-                    <td>Cómo sería</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
+                  <%
+                                count++;
+                                aux = aux.next;
+                            }
+                        } else {
+                            emptyList = true;
+                        }
+                  %>
                 </tbody>
             </table>
         </div>
+        <%
+            if(emptyList) {
+        %>
         <div class="row justify-content-center">
-            <a class="btn btn-dark create-user" href="formPalabras.html" role="button">Crear nueva palabra</a>
+            <div class="alert alert-danger no-users" role="alert">
+                No hay usuarios registrados
+            </div>
+        </div>
+        
+        <%
+            }
+        %>
+        <div class="row justify-content-center">
+            <a class="btn btn-dark create-user" href="form.jsp" role="button">Crear nuevo usuario</a>
         </div>
     </div>
 

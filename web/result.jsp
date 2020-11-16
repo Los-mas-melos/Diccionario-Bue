@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -16,7 +19,7 @@
           <div class="container">
               <div class="row align-items-center justify-content-center">
                   <div class="col-auto hidden-sm-down justify-content-center logo">
-                      <a href="index.html" class="">Diccionario Bue</a>
+                      <a href="index.jsp" class="">Diccionario Bue</a>
                   </div>
                   <div class="col-12 col-sm-8 col-lg-8 buscar">
                       <form action="">
@@ -41,7 +44,7 @@
                       </form>
                   </div>
                   <nav class="col-8 col-lg-1 d-flex justify-content-between menu">
-                      <a href="#" title="Gramática"><span class="oi oi-book"></span></a>
+                      <a href="#" title="GramÃ¡tica"><span class="oi oi-book"></span></a>
                       <a href="#" title="Palabras favoritas"><span class="oi oi-bookmark"></span></a>
                       <a href="#" title="Usuario"><span class="oi oi-person"></span></a>
                   </nav>

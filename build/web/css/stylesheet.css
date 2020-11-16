@@ -45,4 +45,10 @@ body {
 
  .create-user {
      margin-top: 30px;
+     margin-bottom: 30px;
+ }
+ 
+ .no-users {
+     margin-top: 15px;
+     margin-bottom: 30px;
  }

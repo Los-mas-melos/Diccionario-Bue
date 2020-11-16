@@ -1,8 +1,6 @@
 package Servlet;
 
-import Logica.Node;
-import Logica.SimplyLinkedList;
-import Logica.User;
+import Logica.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,26 +9,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "InicioSesion", urlPatterns = {"/Iniciar"})
-public class InicioSesion extends HttpServlet {
+@WebServlet(urlPatterns = {"/Editar_U"})
+public class EditarUsuario extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String correo = request.getParameter("Mail");
-        String clave = request.getParameter("Pass");
+        String nameA = request.getParameter("Nombre_U_A");
+        String mailA = request.getParameter("Correo_U_A").toLowerCase();
+        String passwordA = request.getParameter("Clave_U_A");
+        String validatePasswordA = request.getParameter("Confirm_Clave_A");
         SimplyLinkedList listUsers = (SimplyLinkedList)request.getSession().getAttribute("listaUsuarios");
+        Node aux = listUsers.getByMail(mailA);
         
-        Node aux = listUsers.getByMail(correo);
-        //Falta hacer validacion con los datos de la lista enlazada de usuarios para cualquier usuario
-        if (aux != null && aux.value.getMail().equals(correo) && aux.value.getPassword().equals(clave)){
-            response.sendRedirect("index.jsp");
-        } else{
-            response.sendRedirect("login.jsp");
+        if (passwordA.equals(validatePasswordA)) {
+            aux.value.setName(nameA);
+            aux.value.setPassword(passwordA);
+            aux.value.setMail(mailA);
+            request.getSession().setAttribute("listaUsuarios", listUsers);
+            FileManagment fileUsers = new FileManagment();
+            fileUsers.writeObject(listUsers, "Usuarios.bin");
+            response.sendRedirect("adminUsuarios.jsp");
         }
+        else{
+            response.sendRedirect("adminUsuarios.jsp");
+        }
+        
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -46,4 +54,5 @@ public class InicioSesion extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
+
 }

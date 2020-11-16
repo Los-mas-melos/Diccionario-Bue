@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -19,7 +22,7 @@
     <div class="container align-items-center">
       <div class="row justify-content-center">
         <div class="badge badge-primary text-wrap users-title" style="width: 20rem;">
-          Usuarios
+          Palabras
         </div>
       </div>
         <div class="row justify-content-center">
@@ -27,18 +30,20 @@
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Contraseña</th>
+                    <th scope="col">Español</th>
+                    <th scope="col">Bue</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Ejemplo</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>Hola</td>
+                    <td>Dikue</td>
+                    <td>InterjecciÃ³n</td>
+                    <td>CÃ³mo serÃ­a</td>
                     <td>
                         <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
                         <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
@@ -46,9 +51,10 @@
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>Hola</td>
+                    <td>Dikue</td>
+                    <td>InterjecciÃ³n</td>
+                    <td>CÃ³mo serÃ­a</td>
                     <td>
                         <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
                         <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
@@ -56,9 +62,10 @@
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>Hola</td>
+                    <td>Dikue</td>
+                    <td>InterjecciÃ³n</td>
+                    <td>CÃ³mo serÃ­a</td>
                     <td>
                         <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
                         <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
@@ -68,7 +75,7 @@
             </table>
         </div>
         <div class="row justify-content-center">
-            <a class="btn btn-dark create-user" href="form.jsp" role="button">Crear nuevo usuario</a>
+            <a class="btn btn-dark create-user" href="formPalabras.jsp" role="button">Crear nueva palabra</a>
         </div>
     </div>
 

@@ -17,7 +17,17 @@
   <body>
     <%
         FileManagment fileUsers = new FileManagment();
-        SimplyLinkedList<User> listUsers = (SimplyLinkedList<User>)fileUsers.readObject("Usuarios.bin");
+        File archivo = new File("Usuarios.bin");
+        SimplyLinkedList listUsers = new SimplyLinkedList();
+        if (archivo.exists()) {
+            listUsers = (SimplyLinkedList)fileUsers.readObject("Usuarios.bin");
+            if (archivo.isFile()) {
+                System.out.println("Es un archivo");
+            }
+        } else {
+            fileUsers.writeObject(listUsers, "Usuarios.bin");
+            System.out.println("No existe el archivo");
+        }
         session.setAttribute("listaUsuarios", listUsers);
     %>
     <header>

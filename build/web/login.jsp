@@ -25,7 +25,7 @@
           <h1>Inicio de sesión</h1>
           <form action="Iniciar" method="post" class="col-12">
             <div class="form-group" id="formulario-usuario">
-              <input type="text" placeholder="Nombre de usuario" class="form-control" name="Usuario">
+              <input type="email" placeholder="Correo" class="form-control" name="Mail">
             </div>
             <div class="form-group" id="formulario-contrasena">
               <input type="password" placeholder="Contraseña" class="form-control" name="Pass">

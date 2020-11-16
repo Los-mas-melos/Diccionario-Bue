@@ -2,11 +2,11 @@ package Logica;
 
 import java.io.Serializable;
 
-public class Node<T> implements Serializable {
-    public T value;
+public class Node implements Serializable {
+    public User value;
     public Node next;
 
-    public Node(T value){
+    public Node(User value){
         this.value = value;
         this.next = null;
     }
