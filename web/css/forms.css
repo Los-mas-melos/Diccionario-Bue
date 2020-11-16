@@ -40,6 +40,10 @@ button {
     border-radius: 5px;
 }
 
+.form-group .word-form {
+    padding-left: 20px;
+}
+
 .form-group::before {
     font-family: "Font Awesome\ 5 Free";
     position: absolute;
@@ -61,10 +65,20 @@ button {
     content: "\f058";
 }
 
-.olvidar {
-    padding: 10px 0;
+.actions {
+    padding-top: 5px;
+    padding-bottom: 15px;
 }
 
-.olvidar a{
+.actions a{
     color: white;
 }
+
+.send-button {
+    margin-bottom: 20px;
+}
+
+textarea {
+    resize: none;
+}
+

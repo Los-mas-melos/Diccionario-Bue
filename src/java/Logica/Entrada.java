@@ -4,14 +4,14 @@ package Logica;
 
 public class Entrada {
 
-    public String español;
-    public String bue;
+    private String español;
+    private String bue;
 
     public Entrada(String español, String bue) {
         this.español = español;
         this.bue = bue;
     }
-
+    
     public String getEspañol() {
         return español;
     }

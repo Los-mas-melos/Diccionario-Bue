@@ -1,8 +1,10 @@
 package Logica;
 
-public class Node<T> {
-    T value;
-    Node next;
+import java.io.Serializable;
+
+public class Node<T> implements Serializable {
+    public T value;
+    public Node next;
 
     public Node(T value){
         this.value = value;

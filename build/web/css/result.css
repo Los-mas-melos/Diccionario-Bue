@@ -1,0 +1,135 @@
+body {
+    background: #e9ebee;
+    font-size: 16px;
+}
+
+a {
+    color: #1176b6
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background: #1e32eb;
+    padding: 10px 0;
+}
+
+header a {
+    color: #ffffff;;
+}
+
+header .logo a:hover {
+    color: #fff;
+}
+
+header .logo {
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.buscar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header .buscar form input[type="text"] {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    border-radius: 3px 0 0 3px;
+    color: #6d6d6d;
+}
+
+header .buscar form button{
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    color: #6d6d6d;
+}
+
+header .buscar form .language {
+    width: 84%;
+    background: #ffffff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    margin-left: 8%;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    color: #6d6d6d;
+}
+
+header .buscar form button:hover {
+    background: #099efc;
+    color: #ffffff
+}
+
+/* Menu */
+
+header .menu {
+    padding: 0px;
+}
+
+header .menu a {
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+}
+
+header .menu a:hover {
+    color: #ffffff;
+}
+
+/* Main */
+
+main {
+    padding-top: 30px;
+}
+
+/* Barra izquierda */
+
+main .left-sidebar {
+    padding-bottom: 10px;
+    padding-left: 0;
+}
+
+main .left-sidebar nav {
+    border-bottom: 1px solid #a0a1a1;
+    padding-bottom: 20px;
+}
+
+main .left-sidebar nav a {
+    display: block;
+    padding: 2px 3px;
+    color: #00054d;
+    padding-left: 20px;
+}
+
+main .left-sidebar nav a:hover {
+    background: #f2f2f2;
+}
+
+main .title-word {
+    padding: 10px 10px 10px 20px;
+}
+
+main .meaning {
+    padding: 10px 10px;
+}
+
+main .right-sidebar img {
+    width: 100%;
+}

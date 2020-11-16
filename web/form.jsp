@@ -1,3 +1,5 @@
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -16,7 +18,7 @@
     <title>Registro</title>
   </head>
   <body>
-    <div class="modal-dialog text-center">
+    <div class="modal-dialog text-center align-items-center justify-content-center">
       <div class="col-sm-8 formulario-contenedor formulario-registro">
         <div class="modal-content">
           <h1>Registro de usuario</h1>
@@ -28,18 +30,23 @@
               <input type="email" placeholder="correo" class="form-control" name="Correo_U">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Contraseña" class="form-control" name="Clave_U">
+              <input type="password" placeholder="ContraseÃ±a" class="form-control" name="Clave_U">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Confirmar contraseña" class="form-control "name="Confirm_Clave">
+              <input type="password" placeholder="Confirmar contraseÃ±a" class="form-control "name="Confirm_Clave">
             </div>
             <button type="submit" class="btn btn-primary"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
               <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
             </svg>  Registrarse</button>
           </form>
-          <div class="col-12 olvidar">
-            <a href="#">Soy nativo de la lengua Bue</a>
+          <div class="col-12 justify-content-center align-items-center text-center actions">
+            <div>
+              <a href="login.jsp">Ya tengo una cuenta</a>
+            </div>
+            <div>
+              <a href="#">Soy nativo de la lengua Bue</a>
+            </div>
           </div>
         </div>
       </div>

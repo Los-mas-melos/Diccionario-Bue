@@ -1,3 +1,5 @@
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -14,27 +16,27 @@
     <script defer src="css/fontawesome/js/all.js"></script>
   <a href="login.jsp"></a>
 
-    <title>Iniciar sesión</title>
+    <title>Iniciar sesiÃ³n</title>
   </head>
   <body>
-    <div class="modal-dialog text-center">
+    <div class="modal-dialog text-center align-items-center justify-content-center">
       <div class="col-sm-8 formulario-contenedor formulario-login">
         <div class="modal-content">
-          <h1>Inicio de sesión</h1>
-          <form action="Iniciar" class="col-12">
+          <h1>Inicio de sesiÃ³n</h1>
+          <form action="Iniciar" method="post" class="col-12">
             <div class="form-group" id="formulario-usuario">
               <input type="text" placeholder="Nombre de usuario" class="form-control" name="Usuario">
             </div>
             <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Contraseña" class="form-control" name="Pass">
+              <input type="password" placeholder="ContraseÃ±a" class="form-control" name="Pass">
             </div>
             <button type="submit" class="btn btn-primary"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
               <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
             </svg>  Ingresar</button>
           </form>
-          <div class="col-12 olvidar">
-            <a href="#">Recordar contraseña</a>
+          <div class="col-12 justify-content-center align-items-center text-center actions">
+            <a href="form.jsp">Registrarse</a>
           </div>
         </div>
       </div>
