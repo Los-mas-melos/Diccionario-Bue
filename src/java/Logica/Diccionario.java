@@ -13,12 +13,12 @@ import java.util.logging.Logger;
 
 public class Diccionario extends SimplyLinkedList {
 
-    SimplyLinkedList<Entrada> diccionario = new SimplyLinkedList();
+    SimplyLinkedList diccionario = new SimplyLinkedList();
     Integer size = 0;
 
     public Diccionario() {
         super();
-        SimplyLinkedList<Entrada> diccionario_ = new SimplyLinkedList();
+        SimplyLinkedList diccionario_ = new SimplyLinkedList();
         int index = 0;
         File file = new File("Diccionario(1k)ParaPruebas.txt");
         try (

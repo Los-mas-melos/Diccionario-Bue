@@ -1,8 +1,6 @@
-package com.company;
+package Logica;
 
-import Prototipo2.Exceptions.FoundWordException;
-import Prototipo2.Exceptions.NotFoundWordException;
-import Prototipo2.StorageWords;
+import Logica.Exceptions.*;
 
 public class AVLTree <T extends Comparable<T>> implements StorageWords<T>
 {

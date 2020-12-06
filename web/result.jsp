@@ -15,6 +15,14 @@
     <title>Diccionario Bue</title>
   </head>
   <body>
+      <%
+          String queryResult = (String)session.getAttribute("palabraEncontrada");
+          String translationResult = (String)session.getAttribute("palabraTraducida");
+          if(queryResult == null || queryResult.equals("")) {
+              queryResult = "Palabra no encontrada";
+              translationResult = "Traducción no encontrada";
+          }
+      %>
       <header>
           <div class="container">
               <div class="row align-items-center justify-content-center">
@@ -22,10 +30,10 @@
                       <a href="index.jsp" class="">Diccionario Bue</a>
                   </div>
                   <div class="col-12 col-sm-8 col-lg-8 buscar">
-                      <form action="">
+                      <form action="Buscar_P">
                           <div class="row no-gutters align-items-center">
                               <div class="col-6">
-                                <input type="text" id="" placeholder="Buscar">
+                                <input type="text" id="" placeholder="Buscar" name="Word_Query">
                               </div>
                               <div class="col-2">
                                 <button type="submit"><span class="oi oi-magnifying-glass"></span></button>
@@ -44,7 +52,7 @@
                       </form>
                   </div>
                   <nav class="col-8 col-lg-1 d-flex justify-content-between menu">
-                      <a href="#" title="GramÃ¡tica"><span class="oi oi-book"></span></a>
+                      <a href="#" title="Gramática"><span class="oi oi-book"></span></a>
                       <a href="#" title="Palabras favoritas"><span class="oi oi-bookmark"></span></a>
                       <a href="#" title="Usuario"><span class="oi oi-person"></span></a>
                   </nav>
@@ -71,9 +79,9 @@
           <div class="col-10 col-md-6 col-lg-8 main-content">
             <div class="row justify-content-center">
               <div class="col-10 title-word">
-                <h2>Bueiya Hiroyena:</h2>
+                  <h2><%=queryResult%></h2>
                 Verbo
-                <h5>¿Qué hay para beber?</h5>  
+                <h5><%=translationResult%></h5>  
               </div>
               <div class="row justify-content-center">
                 <div class="col-10 meaning">

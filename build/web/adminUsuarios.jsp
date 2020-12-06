@@ -39,7 +39,7 @@
                 <tbody>
                   <%
                       SimplyLinkedList listUsers = (SimplyLinkedList)session.getAttribute("listaUsuarios");
-                      Node aux = listUsers.first;
+                      ListNode aux = listUsers.first;
                       boolean emptyList = false;
                       if(aux != null) {
                           int count = 1;

@@ -13,7 +13,7 @@
     <link href="css/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
 
-    <title>Administración de usuarios</title>
+    <title>Administración de palabras</title>
   </head>
   <body>
     <header>
@@ -38,10 +38,17 @@
                   </tr>
                 </thead>
                 <tbody>
+                 <%
+                      AVLTree<Word> AvlTreeBue = (AVLTree<Word>)session.getAttribute("arbolBue");
+                      AVLTree<Word> AvlTreeSpanish = (AVLTree<Word>)session.getAttribute("arbolEspanol");
+                      Words words = (Words)session.getAttribute("palabras");
+                      
+                              
+                  %>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
+                    <td><%= AvlTreeSpanish.getRoot().getData()%></td>
+                    <td><%= AvlTreeBue.getRoot().getData()%></td>
                     <td>InterjecciÃ³n</td>
                     <td>CÃ³mo serÃ­a</td>
                     <td>

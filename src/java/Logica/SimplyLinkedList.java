@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class SimplyLinkedList implements Serializable {
 
-    public Node first;
+    public ListNode first;
     protected int length;
 
     public SimplyLinkedList() {
@@ -14,15 +14,15 @@ public class SimplyLinkedList implements Serializable {
     
     public void insert(User value) {
         if (this.length == 0) {
-            this.first = new Node(value);
+            this.first = new ListNode(value);
             this.length++;
             return;
         }
-        Node aux = this.first;
+        ListNode aux = this.first;
         while (aux.next != null) {
             aux = aux.next;
         }
-        aux.next = new Node(value);
+        aux.next = new ListNode(value);
         this.length++;
     }
     
@@ -35,7 +35,7 @@ public class SimplyLinkedList implements Serializable {
             System.out.println("El índice es mayor al tamaño de la lista");
             return null;
         } else {
-            Node aux = this.first;
+            ListNode aux = this.first;
             for (int i = 1; i < index; i++) {
                 aux = aux.next;
             }
@@ -58,7 +58,7 @@ public class SimplyLinkedList implements Serializable {
         } else if (this.first.value.getMail().equals(mail)) {
             this.deleteFirst();
         } else {
-            Node aux = this.first;
+            ListNode aux = this.first;
             while (!aux.next.value.getMail().equals(mail)) {
                 if (aux.next == null) {
                     System.out.println("El elemento no existe dentro de la lista.");
@@ -71,8 +71,8 @@ public class SimplyLinkedList implements Serializable {
         }
     }
     
-    public Node getByMail(String mail) {
-       Node aux = this.first;
+    public ListNode getByMail(String mail) {
+       ListNode aux = this.first;
        if (this.length == 0) {
            System.out.println("Lista vacía.");
            return null;
@@ -93,7 +93,7 @@ public class SimplyLinkedList implements Serializable {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        Node aux = this.first;
+        ListNode aux = this.first;
         while (aux.next != null){
             sb.append(aux.value).append(", ");
             aux = aux.next;

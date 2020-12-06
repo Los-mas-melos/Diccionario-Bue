@@ -21,7 +21,7 @@ public class EditarUsuario extends HttpServlet {
         String passwordA = request.getParameter("Clave_U_A");
         String validatePasswordA = request.getParameter("Confirm_Clave_A");
         SimplyLinkedList listUsers = (SimplyLinkedList)request.getSession().getAttribute("listaUsuarios");
-        Node aux = listUsers.getByMail(mailA);
+        ListNode aux = listUsers.getByMail(mailA);
         
         if (passwordA.equals(validatePasswordA)) {
             aux.value.setName(nameA);

@@ -1,4 +1,4 @@
-package Prototipo2.Exceptions;
+package Logica.Exceptions;
 
 public class FoundWordException extends Exception
 {

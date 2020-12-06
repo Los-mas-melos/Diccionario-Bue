@@ -16,19 +16,52 @@
   </head>
   <body>
     <%
+        //Lista de usuarios
         FileManagment fileUsers = new FileManagment();
-        File archivo = new File("Usuarios.bin");
+        File binUsers = new File("Usuarios.bin");
         SimplyLinkedList listUsers = new SimplyLinkedList();
-        if (archivo.exists()) {
+        if (binUsers.exists()) {
             listUsers = (SimplyLinkedList)fileUsers.readObject("Usuarios.bin");
-            if (archivo.isFile()) {
-                System.out.println("Es un archivo");
-            }
+            System.out.println("Existe el archivo de usuarios");
         } else {
             fileUsers.writeObject(listUsers, "Usuarios.bin");
-            System.out.println("No existe el archivo");
+            System.out.println("No existe el archivo de usuarios");
         }
         session.setAttribute("listaUsuarios", listUsers);
+        
+        //Arboles de palabras
+        FileManagment fileBueWords = new FileManagment();
+        FileManagment fileSpanishWords = new FileManagment();
+        AVLTree<Word> AvlTreeBue = new AVLTree();
+        AVLTree<Word> AvlTreeSpanish = new AVLTree();
+        Words words = new Words();
+        words.setStorageWordsSpanish(AvlTreeSpanish);
+        words.setStorageWordsBue(AvlTreeBue);
+        File binBueWords = new File("Bue.bin");
+        File binSpanishWords = new File("Espanol.bin");
+        //fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
+        //fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
+        
+        if (binBueWords.exists()) {
+            AvlTreeBue = (AVLTree<Word>)fileBueWords.readObject("Bue.bin");
+            System.out.println("Existe el archivo de Bue");
+        } else {
+            fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
+            System.out.println("No existe el archivo de Bue");
+        }
+        session.setAttribute("arbolBue", AvlTreeBue);
+        
+        if (binSpanishWords.exists()) {
+            AvlTreeSpanish = (AVLTree<Word>)fileSpanishWords.readObject("Espanol.bin");
+            System.out.println("Existe el archivo de Español");
+        } else {
+            fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
+            System.out.println("No existe el archivo de Español");
+        }
+        session.setAttribute("arbolEspanol", AvlTreeSpanish);
+        
+        session.setAttribute("palabras", words);
+
     %>
     <header>
       <nav class="nav nav-pills flex-column flex-sm-row barra-navegacion">
@@ -45,14 +78,17 @@
             Diccionario Bue
           </div>
         </div>
-          <div class="row justify-content-center">
-            <div class="input-group col-8 mb-3 barra-busqueda">
-              <div class="input-group-prepend">
-                <button class="btn btn-outline-primary" type="button" id="button-addon1">Buscar</button>
+          <form action="Buscar_P">
+              <div class="row justify-content-center">
+                  <div class="input-group col-8 mb-3 barra-busqueda">
+                      <div class="input-group-prepend">
+                          <button class="btn btn-outline-primary" type="submit" id="button-addon1">Buscar</button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Busqueda" aria-describedby="button-addon1" name="Word_Query">
+                  </div>  
               </div>
-              <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            </div>
-          </div>
+          </form>
+          
       </div>
     </main>
 

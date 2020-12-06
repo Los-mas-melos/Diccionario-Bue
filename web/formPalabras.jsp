@@ -1,3 +1,6 @@
+<%@page import="java.io.File"%>
+<%@page import="Logica.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -20,18 +23,18 @@
       <div class="col-sm-10 formulario-contenedor formulario-registro">
         <div class="modal-content">
           <h1>Nueva entrada</h1>
-          <form action="" class="col-12">
+          <form action="Crear_E" class="col-12">
             <div class="form-group">
-                <input type="text" placeholder="Palabra en Español" class="form-control word-form" name="">
+                <input type="text" placeholder="Palabra en Español" class="form-control word-form" name="Palabra_Espanol">
             </div>
             <div class="form-group" id="word-form">
-                <input type="text" placeholder="Palabra en Bue" class="form-control word-form" name="">
+                <input type="text" placeholder="Palabra en Bue" class="form-control word-form" name="Palabra_Bue">
             </div>
             <div class="form-group">
-                <textarea placeholder="Ejemplo" cols="30" rows="3" class="form-control"></textarea>
+                <textarea placeholder="Ejemplo" cols="30" rows="3" class="form-control" name="Descripcion"></textarea>
             </div>
             <div class="form-group">
-                <select class="custom-select" id="inputGroupSelect01">
+                <select class="custom-select" id="inputGroupSelect01" name="Categoria_Palabra">
                   <option selected>Tipo de palabra</option>
                   <option value="1">Adjetivo</option>
                   <option value="2">Adverbio</option>

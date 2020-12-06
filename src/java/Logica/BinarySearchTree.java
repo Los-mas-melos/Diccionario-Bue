@@ -1,8 +1,6 @@
-package com.company;
+package Logica;
 
-import Prototipo2.Exceptions.FoundWordException;
-import Prototipo2.Exceptions.NotFoundWordException;
-import Prototipo2.StorageWords;
+import Logica.Exceptions.*;
 
 public class BinarySearchTree <T extends Comparable<T>> implements StorageWords<T>
 {
@@ -73,8 +71,7 @@ public class BinarySearchTree <T extends Comparable<T>> implements StorageWords<
         else throw new NotFoundWordException();
     }
 
-    public void removeAll()
-    {
+    public void removeAll() {
         root = null;
     }
 

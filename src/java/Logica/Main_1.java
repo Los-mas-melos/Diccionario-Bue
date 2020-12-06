@@ -1,9 +1,5 @@
-package com.company;
+package Logica;
 
-import Prototipo2.Dialect;
-import Prototipo2.Pruebas;
-import Prototipo2.Word;
-import Prototipo2.Words;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,7 +8,7 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-public class Main {
+public class Main_1 {
 
     public static void main(String[] args) throws IOException {
 

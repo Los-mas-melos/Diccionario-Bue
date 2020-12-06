@@ -1,6 +1,6 @@
-package Prototipo2;
+package Logica;
 
-import com.company.AVLTree;
+//import com.company.AVLTree;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

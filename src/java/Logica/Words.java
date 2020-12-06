@@ -1,22 +1,17 @@
-package Prototipo2;
+package Logica;
 
-import Prototipo2.Exceptions.FoundWordException;
-import Prototipo2.Exceptions.NotFoundWordException;
+import Logica.Exceptions.*;
 
-
-public class Words
-{
+public class Words {
     private StorageWords<Word> storageWordsBue;
     private StorageWords<Word> storageWordsSpanish;
 
-    public Words()
-    {
+    public Words() {
         storageWordsBue     = null;
         storageWordsSpanish = null;
     }
 
-    public void insertWord(String strBue, String strSpanish)
-    {
+    public void insertWord(String strBue, String strSpanish) {
         Word wordBue     = new Word(Dialect.BUE, strBue);
         Word wordSpanish = new Word(Dialect.SPANISH, strSpanish);
 
@@ -63,8 +58,7 @@ public class Words
         }
     }
 
-    public void remove(String strWord)
-    {
+    public void remove(String strWord) {
         try {
             removeBue(strWord);
         } catch (NotFoundWordException e) {

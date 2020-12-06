@@ -1,4 +1,4 @@
-package Prototipo2;
+package Logica;
 
 import java.util.function.Function;
 
