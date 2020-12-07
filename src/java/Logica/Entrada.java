@@ -1,6 +1,8 @@
 package Logica;
 
-public class Entrada {
+import java.io.Serializable;
+
+public class Entrada implements Serializable {
 
     private String español;
     private String bue;

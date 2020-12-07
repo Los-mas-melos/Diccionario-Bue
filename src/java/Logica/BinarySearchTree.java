@@ -1,9 +1,9 @@
 package Logica;
 
 import Logica.Exceptions.*;
+import java.io.Serializable;
 
-public class BinarySearchTree <T extends Comparable<T>> implements StorageWords<T>
-{
+public class BinarySearchTree <T extends Comparable<T>> implements StorageWords<T>, Serializable {
 
     private Node<T> root;
 

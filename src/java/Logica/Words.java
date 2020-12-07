@@ -1,8 +1,9 @@
 package Logica;
 
 import Logica.Exceptions.*;
+import java.io.Serializable;
 
-public class Words {
+public class Words implements Serializable {
     private StorageWords<Word> storageWordsBue;
     private StorageWords<Word> storageWordsSpanish;
 
@@ -70,17 +71,17 @@ public class Words {
         }
     }
 
-    private Word searchBue(String strBue) throws NotFoundWordException {
+    public Word searchBue(String strBue) throws NotFoundWordException {
         Word wordBue = new Word(Dialect.BUE, strBue);
         return (Word) storageWordsBue.search(wordBue).getData();
     }
 
-    private Word searchSpanish(String strSpanish) throws NotFoundWordException {
+    public Word searchSpanish(String strSpanish) throws NotFoundWordException {
         Word wordSpanish = new Word(Dialect.SPANISH, strSpanish);
         return (Word) storageWordsSpanish.search(wordSpanish).getData();
     }
 
-    public Word search(String strWord)
+    public Word search(String strWord) throws NotFoundWordException
     {
         Word word = null;
         try {
@@ -89,7 +90,8 @@ public class Words {
             try {
                 word = searchSpanish(strWord);
             } catch (NotFoundWordException notFoundWordException) {
-                notFoundWordException.printStackTrace();
+                throw new NotFoundWordException();
+                
             }
         }
 

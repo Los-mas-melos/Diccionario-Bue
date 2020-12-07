@@ -1,9 +1,9 @@
 package Logica;
 
 import Logica.Exceptions.*;
+import java.io.Serializable;
 
-public class AVLTree <T extends Comparable<T>> implements StorageWords<T>
-{
+public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Serializable {
     private Node<T> root;
 
     public AVLTree()
@@ -70,7 +70,7 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>
             else if(node.getData().compareTo(value) >= 1)
                 return searchAVL(value, node.getLeft());
             else return node;
-        else throw new NotFoundWordException();
+        else return null;
     }
 
     public void removeAll()

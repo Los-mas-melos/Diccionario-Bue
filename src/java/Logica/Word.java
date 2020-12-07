@@ -1,16 +1,18 @@
 package Logica;
 
 import java.util.function.Function;
+import java.io.Serializable;
 
-public class Word implements Comparable<Word>
-{
+public class Word implements Comparable<Word>, Serializable {
     private Dialect dialect;
 
     private String name;
     private Word   translation;
+    
+    public Word() {
+    }
 
-    public Word(Dialect dialect, String name)
-    {
+    public Word(Dialect dialect, String name) {
         this.dialect = dialect;
         this.name    = name;
     }

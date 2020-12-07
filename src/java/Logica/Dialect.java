@@ -1,5 +1,7 @@
 package Logica;
 
-public enum Dialect {
+import java.io.Serializable;
+
+public enum Dialect implements Serializable {
     BUE, SPANISH
 }
