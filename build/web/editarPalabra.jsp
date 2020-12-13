@@ -1,5 +1,5 @@
 <%@page import="Logica.*"%>
-<%@page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!doctype html>
 <html lang="es">
   <head>
@@ -15,39 +15,30 @@
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <script defer src="css/fontawesome/js/all.js"></script>
 
-    <title>Registro</title>
+    <title>Edición</title>
   </head>
   <body>
+    <%
+        String id = request.getParameter("Id");
+        String espanol = request.getParameter("Espanol");
+        String bue = request.getParameter("Bue");
+    %>
     <div class="modal-dialog text-center align-items-center justify-content-center">
       <div class="col-sm-8 formulario-contenedor formulario-registro">
         <div class="modal-content">
-          <h1>Registro de usuario</h1>
-          <form action="Crear_U" class="col-12">
+          <h1>Edición de entrada</h1>
+          <form action="Editar_E" class="col-12">
             <div class="form-group" id="formulario-usuario">
-                <input type="text" placeholder="Nombre de usuario" class="form-control" name="Nombre_U">
+                <input type="text" placeholder="Español" class="form-control" name="Espanol_A" value="<%= espanol%>">
             </div>
-            <div class="form-group" id="formulario-correo">
-              <input type="email" placeholder="correo" class="form-control" name="Correo_U">
-            </div>
-            <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Contraseña" class="form-control" name="Clave_U">
-            </div>
-            <div class="form-group" id="formulario-contrasena">
-              <input type="password" placeholder="Confirmar contraseña" class="form-control "name="Confirm_Clave">
+            <div class="form-group" id="formulario-usuario">
+                <input type="text" placeholder="Bue" class="form-control" name="Bue_A" value="<%= bue%>">
             </div>
             <button type="submit" class="btn btn-primary"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
               <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
-            </svg>  Registrarse</button>
+            </svg>  Actualizar</button>
           </form>
-          <div class="col-12 justify-content-center align-items-center text-center actions">
-            <div>
-              <a href="login.jsp">Ya tengo una cuenta</a>
-            </div>
-            <div>
-              <a href="#">Soy nativo de la lengua Bue</a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

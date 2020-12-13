@@ -1,6 +1,6 @@
 <%@page import="java.io.File"%>
 <%@page import="Logica.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <!doctype html>
 <html lang="es">
     <head>
@@ -16,6 +16,7 @@
     </head>
     <body>
         <%
+            LastWords lastWords = (LastWords) session.getAttribute("ultimasPalabras");
             String queryResult = (String) session.getAttribute("palabraEncontrada");
             String translationResult = (String) session.getAttribute("palabraTraducida");
             if (queryResult == null || queryResult.equals("")) {
@@ -30,7 +31,7 @@
                         <a href="index.jsp" class="">Diccionario Bue</a>
                     </div>
                     <div class="col-12 col-sm-8 col-lg-8 buscar">
-                        <form action="Buscar_P">
+                        <form action="Buscar_E">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-6">
                                     <input type="text" id="" placeholder="Buscar" name="Word_Query">
@@ -49,7 +50,7 @@
                         </form>
                     </div>
                     <nav class="col-8 col-lg-1 d-flex justify-content-between menu">
-                        <a href="#" title="Gramática"><span class="oi oi-book"></span></a>
+                        <a href="gramatica.jsp" title="Gramática"><span class="oi oi-book"></span></a>
                         <a href="#" title="Palabras favoritas"><span class="oi oi-bookmark"></span></a>
                         <a href="#" title="Usuario"><span class="oi oi-person"></span></a>
                     </nav>
@@ -60,25 +61,25 @@
             <div class="row justify-content-center">
                 <div class="col-10 col-md-3 col-lg-2 left-sidebar">
                     <nav>
+                        
                         <h6>Historial de palabras</h6>
-                        <a href="#">Palabra 1</a>
-                        <a href="#">Palabra 2</a>
-                        <a href="#">Palabra 3</a>
-                        <a href="#">Palabra 4</a>
-                        <a href="#">Palabra 5</a>
-                        <a href="#">Palabra 6</a>
-                        <a href="#">Palabra 7</a>
-                        <a href="#">Palabra 8</a>
-                        <a href="#">Palabra 9</a>
-                        <a href="#">Palabra 10</a>
+                        <% for(int j = 0; j < 10; j++) {
+                            
+                        
+                        %>
+                        <a href="#"><%= lastWords.getArrayQueue().toString() %></a>
+                        <%
+                            }
+                        %>
                     </nav>
+                    
                 </div>
                 <div class="col-10 col-md-6 col-lg-8 main-content">
                     <div class="row justify-content-center">
                         <div class="col-10 title-word">
-                            <h2><%=queryResult%></h2>
-                            Verbo
-                            <h5><%=translationResult%></h5>  
+                            <h1><%=queryResult%></h1>
+                            Categoría gramatical
+                            <h4><%="Traducción: " + translationResult%></h4>  
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-10 meaning">

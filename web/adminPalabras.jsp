@@ -1,6 +1,6 @@
 <%@page import="java.io.File"%>
 <%@page import="Logica.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <!doctype html>
 <html lang="es">
   <head>
@@ -32,55 +32,51 @@
                     <th scope="col">#</th>
                     <th scope="col">Español</th>
                     <th scope="col">Bue</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Ejemplo</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                 <%
-                      AVLTree<Word> AvlTreeBue = (AVLTree<Word>)session.getAttribute("arbolBue");
-                      AVLTree<Word> AvlTreeSpanish = (AVLTree<Word>)session.getAttribute("arbolEspanol");
-                      Words words = (Words)session.getAttribute("palabras");
-                      
-                              
+                    <%
+                        DoubleDataNodeList listBueEsp = (DoubleDataNodeList) session.getAttribute("listaPalabras");
+                        DoubleDataNode aux = listBueEsp.first;
+                        boolean emptyList = false;
+                        if (aux != null) {
+                            int count = 1;
+                            while (aux != null) {
+
+                    %>
+                  <tr>
+                    <th scope="row"><%= count%></th>
+                    <td><%= aux.espanol %></td>
+                    <td><%= aux.bue %></td>
+                    <td>
+                        <a href="editarPalabra.jsp?Id=<%= count%>&Espanol=<%=aux.espanol%>&Bue=<%=aux.bue%>" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
+                        <a href="eliminarPalabra.jsp?Bue=<%= aux.bue%>" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
+                    </td>
+                  </tr>
+                  <%
+                              count++;
+                              aux = aux.next;
+                          }
+                      } else {
+                          emptyList = true;
+                      }
                   %>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td><%= AvlTreeSpanish.getRoot().getData()%></td>
-                    <td><%= AvlTreeBue.getRoot().getData()%></td>
-                    <td>InterjecciÃ³n</td>
-                    <td>CÃ³mo serÃ­a</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
-                    <td>InterjecciÃ³n</td>
-                    <td>CÃ³mo serÃ­a</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Hola</td>
-                    <td>Dikue</td>
-                    <td>InterjecciÃ³n</td>
-                    <td>CÃ³mo serÃ­a</td>
-                    <td>
-                        <a href="#" title="Editar" class="edit-user"><span class="oi oi-pencil"></span></a>
-                        <a href="#" title="Eliminar" class="delete-user"><span class="oi oi-x"></span></a>
-                    </td>
-                  </tr>
                 </tbody>
             </table>
         </div>
+            <%
+                if(emptyList) {
+            %>
+            <div class="row justify-content-center">
+                <div class="alert alert-danger no-users" role="alert">
+                    No hay usuarios registrados
+                </div>
+            </div>
+
+            <%
+                }
+            %>
         <div class="row justify-content-center">
             <a class="btn btn-dark create-user" href="formPalabras.jsp" role="button">Crear nueva palabra</a>
         </div>

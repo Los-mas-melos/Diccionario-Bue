@@ -127,7 +127,8 @@ main .title-word {
 }
 
 main .meaning {
-    padding: 10px 10px;
+    padding-top: 20px;
+    padding-bottom: 25px;
 }
 
 main .right-sidebar img {

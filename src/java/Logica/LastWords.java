@@ -1,13 +1,10 @@
-package com.company;
-
-import com.company.ArrayQueue;
+package Logica;
 
 public class LastWords
 {
     private ArrayQueue<String> queue;
 
-    public LastWords()
-    {
+    public LastWords() {
         queue = new ArrayQueue<String>();
     }
 

@@ -1,6 +1,8 @@
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.FileReader"%>
 <%@page import="java.io.File"%>
 <%@page import="Logica.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <!doctype html>
 <html lang="es">
     <head>
@@ -28,7 +30,27 @@
                 System.out.println("No existe el archivo de usuarios");
             }
             session.setAttribute("listaUsuarios", listUsers);
+            
+            //Lectura archivo palabras
+            DoubleDataNodeList listBueEsp = new DoubleDataNodeList();
+            String cadena;
+            FileReader fr = new FileReader("C:\\Users\\Estudiante\\Documents\\Estructuras de datos\\Diccionario-Bue\\Transcripción_Bue-Esp.txt");
+            BufferedReader br = new BufferedReader(fr);
 
+            while((cadena = br.readLine())!=null) {
+                String[] partes;
+                partes = cadena.split("\t\t");
+                String part1 = partes[0];
+                String part2 = partes[1];
+                
+                listBueEsp.insert(part1, part2);
+            }
+            br.close();
+            
+            LastWords lastWords = new LastWords();
+            for(int i = 0; i < 10; i++) {
+                lastWords.addWord("Holi");
+            }
             //Arboles de palabras
             FileManagment fileBueWords = new FileManagment();
             FileManagment fileSpanishWords = new FileManagment();
@@ -39,34 +61,40 @@
             words.setStorageWordsBue(AvlTreeBue);
             File binBueWords = new File("Bue.bin");
             File binSpanishWords = new File("Espanol.bin");
-            //fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
-            //fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
-
-            if (binBueWords.exists()) {
-                AvlTreeBue = (AVLTree<Word>) fileBueWords.readObject("Bue.bin");
-                System.out.println("Existe el archivo de Bue");
-            } else {
-                fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
-                System.out.println("No existe el archivo de Bue");
+            
+            DoubleDataNode aux = listBueEsp.first;
+            while(aux != null) {
+                words.insertWord(aux.bue, aux.espanol);
+                aux = aux.next;
             }
-            session.setAttribute("arbolBue", AvlTreeBue);
 
-            if (binSpanishWords.exists()) {
-                AvlTreeSpanish = (AVLTree<Word>) fileSpanishWords.readObject("Espanol.bin");
-                System.out.println("Existe el archivo de Español");
-            } else {
-                fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
-                System.out.println("No existe el archivo de Español");
-            }
-            session.setAttribute("arbolEspanol", AvlTreeSpanish);
-
+//            if (binBueWords.exists()) {
+//                AvlTreeBue = (AVLTree<Word>) fileBueWords.readObject("Bue.bin");
+//                System.out.println("Existe el archivo de Bue");
+//            } else {
+//                fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
+//                System.out.println("No existe el archivo de Bue");
+//            }
+//            session.setAttribute("arbolBue", AvlTreeBue);
+//
+//            if (binSpanishWords.exists()) {
+//                AvlTreeSpanish = (AVLTree<Word>) fileSpanishWords.readObject("Espanol.bin");
+//                System.out.println("Existe el archivo de Español");
+//            } else {
+//                fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
+//                System.out.println("No existe el archivo de Español");
+//            }
+//            session.setAttribute("arbolEspanol", AvlTreeSpanish);
+            
+            session.setAttribute("ultimasPalabras", lastWords);
+            session.setAttribute("listaPalabras", listBueEsp);
             session.setAttribute("palabras", words);
 
         %>
         <header>
             <nav class="nav nav-pills flex-column flex-sm-row barra-navegacion">
-                <a class="flex-sm-fill text-sm-center nav-link active" href="index.html">Inicio</a>
-                <a class="flex-sm-fill text-sm-center nav-link boton-navegacion" href="#">Gramática</a>
+                <a class="flex-sm-fill text-sm-center nav-link active" href="index.jsp">Inicio</a>
+                <a class="flex-sm-fill text-sm-center nav-link boton-navegacion" href="gramatica.jsp">Gramática</a>
                 <a class="flex-sm-fill text-sm-center nav-link boton-navegacion" href="login.jsp">Iniciar sesión</a>
                 <a class="flex-sm-fill text-sm-center nav-link boton-navegacion" href="form.jsp">Registro</a>
             </nav>
@@ -78,7 +106,7 @@
                         Diccionario Bue
                     </div>
                 </div>
-                <form action="Buscar_P">
+                <form action="Buscar_E">
                     <div class="row justify-content-center no-gutters">
                         <div class="input-group col-8 col-lg-6 barra-busqueda">
                             <div class="input-group-prepend">

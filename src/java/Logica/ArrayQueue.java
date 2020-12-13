@@ -1,12 +1,12 @@
-package com.company;
+package Logica;
 
 public class ArrayQueue <T>
 {
-    private final int N = 10;
-    private int front;
-    private int rear;
-    private int count;
-    private T[] qarray;
+    public final int N = 10;
+    public int front;
+    public int rear;
+    public int count;
+    public T[] qarray;
 
     public ArrayQueue() {
         front = rear = count = 0;
@@ -56,8 +56,10 @@ public class ArrayQueue <T>
 
         string.append("Frente -> [" + qarray[front]);
         int j = (front + 1) % N;
+        System.out.println(j);
         for(int i = 0; i < count - 1; i++, j = (j + 1) % N){
             string.append(", " + qarray[j]);
+            System.out.println(j);
         }
 
         string.append("]");

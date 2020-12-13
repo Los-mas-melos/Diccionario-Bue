@@ -3,28 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Node.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Main_1.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Diccionario.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/login.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/SimplyLinkedList.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/FileManagment.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/adminPalabras.jsp</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/adminUsuarios.jsp</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/AVLTree.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/formPalabras.jsp</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/ListNode.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/BuscarEntrada.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/EditarUsuario.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/CrearEntrada.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/BinarySearchTree.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Dialect.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Words.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/DoubleDataNode.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/eliminarPalabra.jsp</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/index.jsp</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/StorageWords.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/Pruebas/PruebaUltimas10PalabrasIngresadas/PruebaLastWords.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/gramatica.jsp</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/InicioSesion.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Entrada.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/form.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/editarPalabra.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/EditarEntrada.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/result.jsp</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Word.java</file>
-            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/BuscarPalabra.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/LastWords.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Node.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/DoubleDataNodeList.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/login.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/css/result.css</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/adminPalabras.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/editarUsuario.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/ListNode.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/eliminarUsuario.jsp</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/CrearEntrada.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Words.java</file>
         </group>
     </open-files>
 </project-private>
