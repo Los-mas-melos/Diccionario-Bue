@@ -55,8 +55,7 @@ public class Word implements Comparable<Word>, Serializable {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String name = this.name.substring(0,1) + this.name.substring(1).toLowerCase();
         String translation = this.translation.getName().substring(0,1) + this.translation.getName().substring(1).toLowerCase();
         return String.format("%nDialecto: %s%nPalabra: %s%nTraduccion: %s%n", dialect, name, translation);

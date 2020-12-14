@@ -38,13 +38,13 @@
                     </thead>
                     <tbody>
                         <%
-                            SimplyLinkedList listUsers = (SimplyLinkedList)session.getAttribute("listaUsuarios");
+                            SimplyLinkedList listUsers = (SimplyLinkedList) session.getAttribute("listaUsuarios");
                             ListNode aux = listUsers.first;
                             boolean emptyList = false;
-                            if(aux != null) {
+                            if (aux != null) {
                                 int count = 1;
-                                while(aux != null) {
-                              
+                                while (aux != null) {
+
                         %>
                         <tr>
                             <th scope="row"><%= count%></th>
@@ -57,18 +57,18 @@
                             </td>
                         </tr>
                         <%
-                                      count++;
-                                      aux = aux.next;
-                                  }
-                              } else {
-                                  emptyList = true;
-                              }
+                                    count++;
+                                    aux = aux.next;
+                                }
+                            } else {
+                                emptyList = true;
+                            }
                         %>
                     </tbody>
                 </table>
             </div>
             <%
-                if(emptyList) {
+                if (emptyList) {
             %>
             <div class="row justify-content-center">
                 <div class="alert alert-danger no-users" role="alert">

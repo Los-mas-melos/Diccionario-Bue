@@ -6,8 +6,7 @@ import java.io.Serializable;
 public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Serializable {
     private Node<T> root;
 
-    public AVLTree()
-    {
+    public AVLTree() {
         root = null;
     }
 
@@ -70,11 +69,11 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
             else if(node.getData().compareTo(value) >= 1)
                 return searchAVL(value, node.getLeft());
             else return node;
-        else return null;
+        else 
+            throw new NotFoundWordException();
     }
 
-    public void removeAll()
-    {
+    public void removeAll() {
         root = null;
     }
 
@@ -164,8 +163,7 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
             traverse(ptr.getRight());
     }
 
-    public void traversePreFixAVL()
-    {
+    public void traversePreFixAVL() {
         System.out.print("Prefix:");
         if(root != null)
             traversePreFix(root);
@@ -174,8 +172,7 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
         System.out.println();
     }
 
-    private void traversePreFix(Node<T> p)
-    {
+    private void traversePreFix(Node<T> p) {
         System.out.print(" " + p.getData());
         if(p.getLeft() != null)
             traversePreFix(p.getLeft());
@@ -184,8 +181,7 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
             traversePreFix(p.getRight());
     }
 
-    public void traversePosFixAVL()
-    {
+    public void traversePosFixAVL() {
         System.out.print("Posfix:");
         if(root != null)
             traversePosFix(root);
@@ -194,8 +190,7 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
         System.out.println();
     }
 
-    private void traversePosFix(Node<T> p)
-    {
+    private void traversePosFix(Node<T> p) {
         if(p.getLeft() != null)
             traversePosFix(p.getLeft());
 
@@ -212,13 +207,11 @@ public class AVLTree <T extends Comparable<T>> implements StorageWords<T>, Seria
         return p;
     }
 
-    public void findMaxBST()
-    {
+    public void findMaxBST() {
         System.out.println("Max: " + findMax(root).getData());
     }
 
-    private Node<T> findMax(Node<T> ptr)
-    {
+    private Node<T> findMax(Node<T> ptr) {
         if(ptr.getRight() == null)
             return ptr;
         return findMax(ptr.getRight());

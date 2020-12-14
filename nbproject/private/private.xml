@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Main_1.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/SimplyLinkedList.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Main.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/FileManagment.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/adminUsuarios.jsp</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/formPalabras.jsp</file>
@@ -31,6 +32,7 @@
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/web/eliminarUsuario.jsp</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Servlet/CrearEntrada.java</file>
             <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/Words.java</file>
+            <file>file:/C:/Users/Estudiante/Documents/Estructuras%20de%20datos/Diccionario-Bue/src/java/Logica/ArrayQueue.java</file>
         </group>
     </open-files>
 </project-private>

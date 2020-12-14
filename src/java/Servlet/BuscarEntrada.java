@@ -1,12 +1,10 @@
 package Servlet;
 
-import Logica.AVLTree;
 import Logica.Exceptions.NotFoundWordException;
 import Logica.LastWords;
 import Logica.Word;
 import Logica.Words;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,22 +25,12 @@ public class BuscarEntrada extends HttpServlet {
         String category = request.getParameter("Categoria_Palabra");
         Word result = null;
         try {
-            if (category.equals("Espanol-Bue")) {
-                result = words.searchSpanish(query);
-                if (result != null) {
-                    translation = result.getTranslation().getName();
-                } else {
-                    query = "";
-                }
-            } else if (category.equals("Bue-Espanol")) {
-                result = words.searchBue(query);
-                if (result != null) {
-                    translation = result.getTranslation().getName();
-                } else {
-                    query = "";
-                }
+            result = words.search(query);
+            if (result != null) {
+                translation = result.getTranslation().getName();
+            } else {
+                query = "";
             }
-
         } catch (NotFoundWordException notFoundWordException) {
             query = "";
         }   
@@ -51,8 +39,8 @@ public class BuscarEntrada extends HttpServlet {
             lastWords.addWord(query);
         }
                 
-        request.getSession().setAttribute("palabraEncontrada", query);//query
-        request.getSession().setAttribute("palabraTraducida", translation);//query
+        request.getSession().setAttribute("palabraEncontrada", query);
+        request.getSession().setAttribute("palabraTraducida", translation);
         request.getSession().setAttribute("ultimasPalabras", lastWords);
         response.sendRedirect("result.jsp");
         

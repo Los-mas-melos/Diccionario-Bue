@@ -22,12 +22,10 @@ public class Words implements Serializable {
         try {
             storageWordsBue.insert(wordBue);
         } catch (FoundWordException e) {
-            //System.out.println("La palabra ya se encuentra");
         }
         try {
             storageWordsSpanish.insert(wordSpanish);
         } catch (FoundWordException e) {
-            //System.out.println("La palabra ya se encuentra");
         }
     }
 
@@ -81,8 +79,7 @@ public class Words implements Serializable {
         return (Word) storageWordsSpanish.search(wordSpanish).getData();
     }
 
-    public Word search(String strWord) throws NotFoundWordException
-    {
+    public Word search(String strWord) throws NotFoundWordException {
         Word word = null;
         try {
             word = searchBue(strWord);
@@ -98,8 +95,7 @@ public class Words implements Serializable {
         return word;
     }
 
-    public void removeAll()
-    {
+    public void removeAll() {
         storageWordsBue.removeAll();
         storageWordsSpanish.removeAll();
     }

@@ -1,7 +1,6 @@
 package Logica;
 
-public class ArrayQueue <T>
-{
+public class ArrayQueue <T> {
     public final int N = 10;
     public int front;
     public int rear;
@@ -48,7 +47,7 @@ public class ArrayQueue <T>
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         if(empty())
             return("Frente -> []");
 
@@ -56,10 +55,8 @@ public class ArrayQueue <T>
 
         string.append("Frente -> [" + qarray[front]);
         int j = (front + 1) % N;
-        System.out.println(j);
         for(int i = 0; i < count - 1; i++, j = (j + 1) % N){
             string.append(", " + qarray[j]);
-            System.out.println(j);
         }
 
         string.append("]");

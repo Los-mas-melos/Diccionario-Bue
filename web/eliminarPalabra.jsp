@@ -9,7 +9,7 @@
     <body>
         <%
             String bue = request.getParameter("Bue");
-            DoubleDataNodeList listBueEsp = (DoubleDataNodeList)session.getAttribute("listaPalabras");
+            DoubleDataNodeList listBueEsp = (DoubleDataNodeList) session.getAttribute("listaPalabras");
             listBueEsp.deleteByBue(bue);
             request.getSession().setAttribute("listaPalabras", listBueEsp);
             response.sendRedirect("adminPalabras.jsp");

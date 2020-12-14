@@ -48,7 +48,7 @@ bite		venir
 biya		venida
 biyama		tío materno
 bigi		macana
-bitadate		acostarse (P1)
+bitadate		acostarse
 bofedaite		estar herido
 bonode		hacer fuego
 boocle		arder un fuego
@@ -102,7 +102,7 @@ ebe		¡oye!, jay!
 ebekotaide		atreverse
 ebire		bonito
 eede		llorar
-eei		mamá (P2)
+eei		mamá
 eeikaño		tía política
 eeiñaiño		la mayor
 eeifio		madre
@@ -160,12 +160,12 @@ gairide		descansar en grupo, estar reunidos
 gaitade		agarrar, atrapar, posesionarse
 gononokai		cañaa de azúcar
 guifide		saciarse
-guite		comer (P3)
+guite		comer
 guiye		comida
 gwate		moler golpeando, machacar
 ia		pero
 iaiñuai		las dos (mujeres)
-ibaide (¿?)		cerrar, trancar
+ibaide		cerrar, trancar
 ibe		hoja
 ie		su (de él o de ella)
 ie jirari		por esa razón
@@ -205,7 +205,6 @@ izirafe		cernidor
 izirede		doler
 izo		tío paterno
 izoide		ser así, parecer
-I		-
 iaizai		sal de monte
 ibaide		cerrar
 iduide		exprimir
@@ -285,7 +284,7 @@ jitoma		sol
 jiza		hija
 jizaiño		guama
 jiai		también
-jiaie		otro, otra (P4)
+jiaie		otro, otra
 jiaikaiño		a veces, otra vez
 jiaimie		otro (hombre)
 jiaimona		el año entrante
@@ -401,7 +400,7 @@ naga		cada uno
 nagaámaga		cuatro
 nagaámagarui		cuatro días
 nagajebekuiro		diez
-nagakorie		cada casa (P5)
+nagakorie		cada casa
 nagoberi		todo el pueblo
 naidakaide		pararse con rapidez
 naie		aquel, aquella, aquello
@@ -519,7 +518,7 @@ roziyi		piña
 ruidoño		sabaleta
 ruuide		asar, tostar
 ruuika		es asado
-tainode		partir un objeto (P6)
+tainode		partir un objeto
 taino yote		mentir, engañar
 takirafe		corva
 takuiñote		elevar

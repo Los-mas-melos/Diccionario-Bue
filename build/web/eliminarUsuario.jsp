@@ -9,7 +9,7 @@
     <body>
         <%
             String correo = request.getParameter("Correo");
-            SimplyLinkedList listUsers = (SimplyLinkedList)session.getAttribute("listaUsuarios");
+            SimplyLinkedList listUsers = (SimplyLinkedList) session.getAttribute("listaUsuarios");
             listUsers.deleteByMail(correo);
             request.getSession().setAttribute("listaUsuarios", listUsers);
             FileManagment fileUsers = new FileManagment();

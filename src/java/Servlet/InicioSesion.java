@@ -2,9 +2,7 @@ package Servlet;
 
 import Logica.ListNode;
 import Logica.SimplyLinkedList;
-import Logica.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,3 +1,5 @@
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.io.InputStreamReader"%>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="java.io.FileReader"%>
 <%@page import="java.io.File"%>
@@ -30,62 +32,40 @@
                 System.out.println("No existe el archivo de usuarios");
             }
             session.setAttribute("listaUsuarios", listUsers);
-            
+
             //Lectura archivo palabras
             DoubleDataNodeList listBueEsp = new DoubleDataNodeList();
             String cadena;
-            FileReader fr = new FileReader("C:\\Users\\Estudiante\\Documents\\Estructuras de datos\\Diccionario-Bue\\Transcripción_Bue-Esp.txt");
-            BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\Estudiante\\Documents\\Estructuras de datos\\Diccionario-Bue\\Transcripción_Bue-Esp.txt"), "utf-8"));
 
-            while((cadena = br.readLine())!=null) {
+            while ((cadena = br.readLine()) != null) {
                 String[] partes;
                 partes = cadena.split("\t\t");
                 String part1 = partes[0];
                 String part2 = partes[1];
-                
+
                 listBueEsp.insert(part1, part2);
             }
             br.close();
-            
+
+            //Arreglo circular de palabras
             LastWords lastWords = new LastWords();
-            for(int i = 0; i < 10; i++) {
-                lastWords.addWord("Holi");
+            for (int i = 0; i < 10; i++) {
+                lastWords.addWord("");
             }
             //Arboles de palabras
-            FileManagment fileBueWords = new FileManagment();
-            FileManagment fileSpanishWords = new FileManagment();
             AVLTree<Word> AvlTreeBue = new AVLTree();
             AVLTree<Word> AvlTreeSpanish = new AVLTree();
             Words words = new Words();
             words.setStorageWordsSpanish(AvlTreeSpanish);
             words.setStorageWordsBue(AvlTreeBue);
-            File binBueWords = new File("Bue.bin");
-            File binSpanishWords = new File("Espanol.bin");
-            
+
             DoubleDataNode aux = listBueEsp.first;
-            while(aux != null) {
+            while (aux != null) {
                 words.insertWord(aux.bue, aux.espanol);
                 aux = aux.next;
             }
 
-//            if (binBueWords.exists()) {
-//                AvlTreeBue = (AVLTree<Word>) fileBueWords.readObject("Bue.bin");
-//                System.out.println("Existe el archivo de Bue");
-//            } else {
-//                fileBueWords.writeObject(AvlTreeBue, "Bue.bin");
-//                System.out.println("No existe el archivo de Bue");
-//            }
-//            session.setAttribute("arbolBue", AvlTreeBue);
-//
-//            if (binSpanishWords.exists()) {
-//                AvlTreeSpanish = (AVLTree<Word>) fileSpanishWords.readObject("Espanol.bin");
-//                System.out.println("Existe el archivo de Español");
-//            } else {
-//                fileSpanishWords.writeObject(AvlTreeBue, "Espanol.bin");
-//                System.out.println("No existe el archivo de Español");
-//            }
-//            session.setAttribute("arbolEspanol", AvlTreeSpanish);
-            
             session.setAttribute("ultimasPalabras", lastWords);
             session.setAttribute("listaPalabras", listBueEsp);
             session.setAttribute("palabras", words);
